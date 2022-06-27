@@ -3,3 +3,38 @@ allow less secure app https://myaccount.google.com/lesssecureapps
 
 write program
 check mail
+
+// Relational database(sql) data is stored in tables,row,columns
+//Non Relationa(non-sql)data is stored in bson format similar to json
+
+difference between drop, truncate
+
+change in the definition/structure : ddl
+create,alter,drop: ddl
+
+insert,delete,update, truncate : dml
+
+select : dql
+
+select \* from student id in(5,6);
+select id as sno from student
+
+joins are of three types:left,right,inner
+
+select \* from student s left join mark m on s.id=m.studentId // all rows from left table and matching columns from right table will be selected
+
+select & from student s right join mark m on s.id=m.studentId // all the rows from right table and matching columns from left table will be selected
+
+select \* from student s inner join mark m on s.id=m.studentId //all the matching rows from both will be selected
+
+select studentId,Mark from mark group by StudentId;
+select studentId, sum(Mark) from mark group by studentId;
+
+note: where is used to add condition in non grouped data where as having is used to add condition in grouped data
+
+select studentId,Mark from mark group by StudentId having StudentId in(1,4);
+
+select studentId, sum(mark) from mark where subject!="maths" group by studentId having studentId in(1,4);
+
+sql: is used for relational database
+no sql: functions(javascript)
